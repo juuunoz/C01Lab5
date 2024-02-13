@@ -27,18 +27,14 @@
                 with:
                   node-version: ${{ matrix.node-version }}
               
-              - name: Install MongoDB
-                run: npm install mongodb --save
+              - run: npm install mongodb --save
               
-              - name: Install dependencies
-                run: npm install
+              - run: npm install
 
-              - name: Start MongoDB
-                run: mongod --dbpath=./data/db
+              - run: mongod --dbpath=./data/db
               
-              - name: Run server.js
-                run: npm run dev
+              - run: npm run dev
           
-             - name: Testing...
-                run: npm i
-                run: npm test
+             
+              - run: npm i
+              - run: npm test
