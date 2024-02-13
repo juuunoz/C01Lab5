@@ -30,11 +30,8 @@
               - run: npm install mongodb --save
               - uses: actions/checkout@v2
               - run: npm install
-
-              - run: mongod --dbpath=./data/db
-              
+      
               - run: npm run dev
-          
-             
+        
               - run: npm i
               - run: npm test
