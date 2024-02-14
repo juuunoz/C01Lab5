@@ -22,8 +22,17 @@ test("/postNote - Post a note", async () => {
 });
 
 test("/getAllNotes - Return list of zero notes for getAllNotes", async () => {
-  // Code here
-  expect(false).toBe(true);
+  const getAllNotesRes = await fetch(`${SERVER_URL}/getAllNotes`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      }
+  })
+
+  const getAllNotesBody = await getAllNotesRes.json();
+
+  expect(getAllNotesRes.status).toBe(200);
+  expect(getAllNotesBody.response).toBe([]);
 });
 
 test("/getAllNotes - Return list of two notes for getAllNotes", async () => {
